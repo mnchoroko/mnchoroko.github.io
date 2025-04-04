@@ -7,18 +7,18 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f7fa; /* Soft light gray background */
-  color: #2c3e50; /* Dark gray text for elegance */
+  background-color: #ecf0f1; /* Light background */
+  color: #2c3e50; /* Dark text for clarity */
 }
 
 /* Header Section */
 header {
-  background-color: #34495e; /* Darker, muted blue */
+  background-color: #1e2a47; /* Dark blue background */
   color: #ffffff;
   text-align: center;
-  padding: 80px 0;
+  padding: 60px 0;
   position: relative;
-  border-bottom: 2px solid #ecf0f1;
+  border-bottom: 2px solid #3498db;
 }
 
 header h1 {
@@ -29,8 +29,16 @@ header h1 {
 
 header p {
   font-size: 1.5em;
-  font-weight: 400;
+  font-weight: 300;
   margin-top: 10px;
+}
+
+header .profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 20px;
+  border: 5px solid #3498db;
 }
 
 /* Navigation Menu */
@@ -49,7 +57,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #3498db; /* Elegant hover color */
+  color: #3498db; /* Hover effect */
 }
 
 /* Main Section */
@@ -58,7 +66,7 @@ nav a:hover {
   padding: 60px 20px;
   background-color: #ffffff;
   margin-top: 50px;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -70,15 +78,14 @@ nav a:hover {
 
 .main-section p {
   font-size: 1.5em;
-  font-weight: 300;
   margin-bottom: 30px;
   line-height: 1.6;
-  color: #7f8c8d; /* Soft gray text for description */
+  color: #7f8c8d; /* Soft gray */
 }
 
 /* Button */
 .button {
-  background-color: #3498db; /* Soft blue button */
+  background-color: #3498db; /* Soft blue */
   color: #ffffff;
   padding: 15px 40px;
   font-size: 1.2em;
@@ -87,11 +94,10 @@ nav a:hover {
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-weight: 500;
 }
 
 .button:hover {
-  background-color: #2980b9; /* Elegant dark blue on hover */
+  background-color: #2980b9; /* Darker blue on hover */
 }
 
 /* Skills & Expertise Section */
@@ -114,7 +120,7 @@ ul.projects {
 }
 
 ul.projects li {
-  background-color: #ecf0f1; /* Soft background for project items */
+  background-color: #ecf0f1;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
@@ -122,7 +128,7 @@ ul.projects li {
 }
 
 ul.projects li:hover {
-  transform: translateY(-10px); /* Subtle hover effect */
+  transform: translateY(-10px);
 }
 
 ul.projects li a {
