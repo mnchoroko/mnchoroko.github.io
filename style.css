@@ -36,9 +36,10 @@ header p {
 header .profile-img {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  border-radius: 50%;  /* Circular image */
+  border: 5px solid #3498db;  /* Border around image */
   margin-top: 20px;
-  border: 5px solid #3498db;
+  object-fit: cover;
 }
 
 /* Navigation Menu */
