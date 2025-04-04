@@ -16,7 +16,7 @@ header {
   background-color: #1e2a47; /* Dark blue background */
   color: #ffffff;
   text-align: center;
-  padding: 60px 0;
+  padding: 60px 20px;
   position: relative;
   border-bottom: 2px solid #3498db;
 }
@@ -38,8 +38,11 @@ header .profile-img {
   height: 150px;
   border-radius: 50%;  /* Circular image */
   border: 5px solid #3498db;  /* Border around image */
-  margin-top: 20px;
-  object-fit: cover;
+  margin-top: 30px;  /* Give more space at the top */
+  object-fit: cover;  /* Ensure the image covers the area properly */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Navigation Menu */
@@ -169,58 +172,4 @@ footer {
   padding: 40px 20px;
   background-color: #34495e;
   color: #ffffff;
-  margin-top: 50px;
-}
-
-footer p {
-  font-size: 1.2em;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  header {
-    padding: 60px 20px;
-  }
-
-  header h1 {
-    font-size: 2.5em;
-  }
-
-  header p {
-    font-size: 1.2em;
-  }
-
-  .main-section h2 {
-    font-size: 2.5em;
-  }
-
-  .main-section p {
-    font-size: 1.3em;
-  }
-
-  .button {
-    padding: 12px 30px;
-  }
-
-  ul.projects {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    padding: 20px 0;
-  }
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  section {
-    margin: 20px;
-  }
-
-  ul.projects {
-    grid-template-columns: 1fr;
-  }
-}
+  margin-top: 50
