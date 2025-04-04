@@ -13,15 +13,15 @@ body {
 
 /* Header Section */
 header .profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 5px solid #3498db;
-  margin-top: 30px;
-  object-fit: cover;
+  width: 150px; /* Set width of image */
+  height: 150px; /* Set height of image */
+  border-radius: 50%; /* Circular image */
+  border: 5px solid #3498db; /* Border around image */
+  margin-top: 30px; /* Space at the top */
+  object-fit: cover; /* Ensure the image fits well */
   display: block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; /* Center image */
 }
 
 header h1 {
