@@ -14,16 +14,15 @@
     }
     
     body {
-  font-family: 'Raleway', sans-serif;
-  color: #ffffff;
-  line-height: 1.6;
-  background-image: url('background%20photo.jpg'); /* Path to your background image */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
+      font-family: 'Raleway', sans-serif;
+      background-color: #0d0d0d;
+      color: #ffffff;
+      line-height: 1.6;
+      background-image: url('background%20photo.jpg'); /* Replace with your actual background image */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
     }
     
     body::before {
@@ -53,24 +52,21 @@
     }
     
     h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 4rem;  /* Increased size for bold emphasis */
-  font-weight: 900;   /* Super bold weight */
-  color: #FFFFFF;  /* White color */
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;  /* Increased size for the subtitle */
-  color: #FFFFFF;  /* White color */
-  font-weight: 700;  /* Bold weight */
-  margin-bottom: 2rem;
-}
-
-
-
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 1rem;
+    }
     
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #FFFFFF;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
     .main-content {
       flex: 1;
       display: flex;
@@ -135,35 +131,82 @@ h2 {
       min-width: 120px;
       text-align: center;
     }
-    
+
+    /* Add rotation animation on button click */
+    .nav-button:active {
+      transform: rotate(360deg);
+      transition: transform 0.8s ease;
+    }
+
     .nav-button:hover {
       background-color: #F5D76E;
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
-    /* Content sections */
-    .section {
-      display: none;
+    /* Blink effect on sections */
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+
+    /* Add blink effect to sections */
+    .blink-section {
+      animation: blink 1.5s infinite;
+      padding: 1rem 2rem;
       margin-top: 2rem;
-      padding: 1.5rem;
-      background-color: rgba(34, 34, 34, 0.7);
-      border-radius: 8px;
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
     }
-    
-    .section.active {
-      display: block;
+
+    .blink-section:hover {
+      background-color: #F5D76E;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
-    
-    .section h3 {
-      color: #D4AF37;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
+
+    /* Download CV Button */
+    .download-cv {
+      background-color: #F5D76E;
+      color: #222;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      margin-top: 2rem;
+      display: inline-block;
+      text-align: center;
+      animation: blink 1.5s infinite;  /* Apply blink animation */
     }
-    
-    /* Add other styling as needed */
+
+    .download-cv:hover {
+      background-color: #D4AF37;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* LinkedIn Button */
+    .linkedin-button {
+      background-color: #0077b5;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      margin-top: 2rem;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .linkedin-button:hover {
+      background-color: #0a66c2;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
   </style>
 </head>
 <body>
@@ -176,7 +219,7 @@ h2 {
     <main class="main-content">
       <div class="profile-card">
         <div class="profile-info">
-          <img src="profile.jpg" alt="Maxwell Nchoroko" class="profile-image"> <!-- This is the profile image -->
+          <img src="profile.jpg" alt="Maxwell Nchoroko" class="profile-image"> <!-- Your profile image -->
           <p class="bio">
             Hello! I'm Maxwell, a dedicated AI Data Specialist and Quality Analyst based in Nairobi, Kenya. Passionate about training quality data for AI systems, I specialize in data analysis, transcription, and quality assurance processes to help businesses leverage digital solutions effectively.
           </p>
@@ -189,7 +232,7 @@ h2 {
           </div>
           
           <!-- Work Experience Section -->
-          <div id="experience" class="section">
+          <div id="experience" class="section blink-section">
             <h3>Work Experience</h3>
             <div class="job">
               <h4>Expert Contributor - Snorkel AI</h4>
@@ -203,7 +246,7 @@ h2 {
           </div>
           
           <!-- Education Section -->
-          <div id="education" class="section">
+          <div id="education" class="section blink-section">
             <h3>Education</h3>
             <div class="education-item">
               <p><strong>Diploma in Business Information Technology</strong> - St. Paul's University (2020 – 2021)</p>
@@ -214,7 +257,7 @@ h2 {
           </div>
 
           <!-- Skills Section -->
-          <div id="skills" class="section">
+          <div id="skills" class="section blink-section">
             <h3>Skills</h3>
             <ul>
               <li>Data Analysis</li>
@@ -225,7 +268,7 @@ h2 {
           </div>
 
           <!-- Contact Section -->
-          <div id="contact" class="section">
+          <div id="contact" class="section blink-section">
             <h3>Contact Information</h3>
             <p><strong>Email:</strong> <a href="mailto:maxwellnchoroko@gmail.com">maxwellnchoroko@gmail.com</a></p>
             <p><strong>Phone:</strong> 0721 480454</p>
@@ -238,6 +281,10 @@ h2 {
             <p><strong>Gilfex Opee</strong> – Content Manager, Eneza Education</p>
             <p>Phone: +254 707 346313</p>
           </div>
+          
+          <!-- Download CV and LinkedIn Buttons -->
+          <a href="https://docs.google.com/document/d/1UD82c81Bz8DPoyDdSTHw525EBBrx4t4tR2AZXzKZK-Y/edit?usp=sharing" class="download-cv" target="_blank">Download My CV</a>
+          <a href="https://www.linkedin.com/in/maxwell-nchoroko-217364158/" class="linkedin-button" target="_blank">Visit My LinkedIn</a>
         </div>
       </div>
     </main>
