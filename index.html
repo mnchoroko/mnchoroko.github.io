@@ -18,7 +18,7 @@
       background-color: #0d0d0d;
       color: #ffffff;
       line-height: 1.6;
-      background-image: url('/api/placeholder/1200/800');  /* Replace with your actual background image */
+      background-image: url('/api/placeholder/1200/800'); /* Replace with your actual background image */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -157,23 +157,7 @@
       margin-bottom: 1rem;
       font-size: 1.3rem;
     }
-    
-    /* Media Queries */
-    @media (max-width: 768px) {
-      .profile-image {
-        width: 120px;
-        height: 120px;
-      }
-      
-      .navigation {
-        flex-direction: column;
-        width: 100%;
-      }
-      
-      .nav-button {
-        width: 100%;
-      }
-    }
+
   </style>
 </head>
 <body>
@@ -201,25 +185,25 @@
           <!-- Experience Section -->
           <div id="experience" class="section">
             <h3>Work Experience</h3>
-            <!-- Work experience content goes here -->
+            <p>Here will go your work experience details...</p>
           </div>
           
           <!-- Education Section -->
           <div id="education" class="section">
             <h3>Education</h3>
-            <!-- Education content goes here -->
+            <p>Details of your education will appear here...</p>
           </div>
 
           <!-- Skills Section -->
           <div id="skills" class="section">
             <h3>Skills</h3>
-            <!-- Skills content goes here -->
+            <p>Your skills will be displayed here...</p>
           </div>
 
           <!-- Contact Section -->
           <div id="contact" class="section">
             <h3>Contact</h3>
-            <!-- Contact content goes here -->
+            <p>Your contact information will go here...</p>
           </div>
         </div>
       </div>
@@ -227,18 +211,17 @@
   </div>
   
   <script>
-    // Show experience section by default
-    document.getElementById('experience').classList.add('active');
-    
+    // Function to show the selected section and hide the others
     function showSection(sectionId) {
       // Hide all sections
       const sections = document.querySelectorAll('.section');
       sections.forEach(section => {
         section.classList.remove('active');
       });
-      
-      // Show selected section
-      document.getElementById(sectionId).classList.add('active');
+
+      // Show the selected section
+      const selectedSection = document.getElementById(sectionId);
+      selectedSection.classList.add('active');
     }
   </script>
 </body>
