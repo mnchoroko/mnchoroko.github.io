@@ -136,7 +136,7 @@
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
-    
+
     /* Content sections */
     .section {
       display: none;
@@ -158,74 +158,11 @@
       font-size: 1.3rem;
     }
     
-    .job {
-      margin-bottom: 1.5rem;
-      border-left: 2px solid #D4AF37;
-      padding-left: 1rem;
-    }
-    
-    .job-title {
-      font-weight: bold;
-      margin-bottom: 0.3rem;
-    }
-    
-    .job-company {
-      font-style: italic;
-      margin-bottom: 0.3rem;
-    }
-    
-    .job-period {
-      font-size: 0.9rem;
-      color: #aaa;
-      margin-bottom: 0.5rem;
-    }
-    
-    .job-description ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
-    
-    .education-item {
-      margin-bottom: 1rem;
-    }
-    
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    
-    .skill-item {
-      background-color: rgba(212, 175, 55, 0.1);
-      padding: 0.7rem 1rem;
-      border-radius: 4px;
-      border-left: 2px solid #D4AF37;
-    }
-    
-    .contact-info p {
-      margin-bottom: 0.7rem;
-    }
-    
-    .contact-info a {
-      color: #D4AF37;
-      text-decoration: none;
-    }
-    
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-    
+    /* Media Queries */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      
-      h2 {
-        font-size: 1.2rem;
-      }
-      
-      .profile-card {
-        padding: 2rem 1.5rem;
+      .profile-image {
+        width: 120px;
+        height: 120px;
       }
       
       .navigation {
@@ -249,8 +186,7 @@
     <main class="main-content">
       <div class="profile-card">
         <div class="profile-info">
-          <img src="/api/placeholder/150/150" alt="Maxwell Nchoroko" class="profile-image">  <!-- Replace with your actual profile photo -->
-          
+          <img src="profile.jpg" alt="Maxwell Nchoroko" class="profile-image">
           <p class="bio">
             Hello! I'm Maxwell, a dedicated AI Data Specialist and Quality Analyst based in Nairobi, Kenya. Passionate about training quality data for AI systems, I specialize in data analysis, transcription, and quality assurance processes to help businesses leverage digital solutions effectively.
           </p>
@@ -265,166 +201,25 @@
           <!-- Experience Section -->
           <div id="experience" class="section">
             <h3>Work Experience</h3>
-            
-            <div class="job">
-              <div class="job-title">Expert Contributor</div>
-              <div class="job-company">Snorkel AI</div>
-              <div class="job-period">January 2025 - Present</div>
-              <div class="job-description">
-                <ul>
-                  <li>Data Annotation: Assigned meaningful labels to raw data such as text, images, audio, or video, to facilitate machine learning processes.</li>
-                  <li>Development of Labeling Functions: Collaborated with data scientists to create labeling functions and programmatic rules.</li>
-                  <li>Data Quality Assurance: Implemented quality control measures to verify accuracy and consistency of labeled data.</li>
-                  <li>Collaboration and Feedback Integration: Worked closely with cross-functional teams to incorporate feedback and refine guidelines.</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="job">
-              <div class="job-title">Transcriber & Reviewer</div>
-              <div class="job-company">CGBiz Corporation Scribie</div>
-              <div class="job-period">March 2023 - Present</div>
-              <div class="job-description">
-                <ul>
-                  <li>Actively listening to audio or video recordings and accurately converting spoken content into written form.</li>
-                  <li>Maintaining the integrity and context of the original material in transcriptions.</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="job">
-              <div class="job-title">AAT Responder</div>
-              <div class="job-company">Eneza Education Limited</div>
-              <div class="job-period">August 2019 - Present</div>
-              <div class="job-description">
-                <ul>
-                  <li>Responding to over 2500 questions from both high school and primary school students within a 24-hour time frame.</li>
-                  <li>Uploading learning content to the Eneza CMS platform to hit the company's 12-hour target.</li>
-                  <li>Providing quality responses to achieve a 97% customer satisfaction rate.</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="job">
-              <div class="job-title">Freelance Team Manager</div>
-              <div class="job-company">Delegate Operations</div>
-              <div class="job-period">August 2023 - January 2024</div>
-              <div class="job-description">
-                <ul>
-                  <li>Defined project scope, objectives, and deliverables to ensure clear direction and alignment with client expectations.</li>
-                  <li>Developed detailed project plans, including timelines, milestones, and resource requirements.</li>
-                  <li>Assembled project teams with the right skills and expertise, ensuring effective collaboration.</li>
-                  <li>Implemented and monitored quality assurance processes throughout projects.</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="job">
-              <div class="job-title">Quality Analyst</div>
-              <div class="job-company">Sama (formerly Samasource Kenya)</div>
-              <div class="job-period">August 2022 - February 2023</div>
-              <div class="job-description">
-                <ul>
-                  <li>Analyzed reviewers' work output against guidelines and provided constructive feedback.</li>
-                  <li>Provided feedback to Team Leaders on identified areas that individual team members needed to improve.</li>
-                  <li>Compiled and distributed comprehensive feedback to agents on identified gaps or areas of weakness.</li>
-                  <li>Compiled and sent daily, weekly, and monthly quality reports to relevant stakeholders.</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="job">
-              <div class="job-title">AI Data Associate</div>
-              <div class="job-company">Sama (formerly Samasource Kenya)</div>
-              <div class="job-period">August 2017 - July 2022</div>
-              <div class="job-description">
-                <ul>
-                  <li>Classified products into multiple categories following specific taxonomies.</li>
-                  <li>Maintained data work requirements by following data program techniques and procedures, meeting and maintaining a 95%+ quality threshold.</li>
-                  <li>Verified entered data by reviewing, correcting, deleting, or reentering data.</li>
-                  <li>Achievement: Promoted to project reviewer (Digital Cartography) in a record time of two weeks.</li>
-                </ul>
-              </div>
-            </div>
+            <!-- Work experience content goes here -->
           </div>
           
           <!-- Education Section -->
           <div id="education" class="section">
             <h3>Education</h3>
-            
-            <div class="education-item">
-              <div class="job-title">Diploma in Business Information Technology</div>
-              <div class="job-company">St. Paul's University</div>
-              <div class="job-period">2020 - 2021</div>
-            </div>
-            
-            <div class="education-item">
-              <div class="job-title">B.Ed Arts (Mathematics & Geography) - Ongoing</div>
-              <div class="job-company">Kenyatta University</div>
-              <div class="job-period">September 2015</div>
-            </div>
-            
-            <div class="education-item">
-              <div class="job-title">Certificate in Basic Computer</div>
-              <div class="job-company">Chrisco Professional Centre</div>
-              <div class="job-period">May 2015</div>
-            </div>
-            
-            <div class="education-item">
-              <div class="job-title">KCSE Certificate</div>
-              <div class="job-company">Senior Chief Kegati Secondary</div>
-              <div class="job-period">2014</div>
-            </div>
-            
-            <div class="education-item">
-              <div class="job-title">KCPE Certificate</div>
-              <div class="job-company">Chrisco Educational Centre</div>
-              <div class="job-period">2002 - 2009</div>
-            </div>
+            <!-- Education content goes here -->
           </div>
-          
+
           <!-- Skills Section -->
           <div id="skills" class="section">
-            <h3>Professional Skills</h3>
-            
-            <div class="skills-list">
-              <div class="skill-item">Data Analysis</div>
-              <div class="skill-item">Teaching</div>
-              <div class="skill-item">Transcription</div>
-              <div class="skill-item">Data Annotation</div>
-              <div class="skill-item">Quality Assurance</div>
-              <div class="skill-item">Project Management</div>
-              <div class="skill-item">MS Office Suite</div>
-              <div class="skill-item">Labeling Functions</div>
-              <div class="skill-item">Team Management</div>
-            </div>
-            
-            <h3 style="margin-top: 2rem;">Certifications</h3>
-            <ul style="list-style-type: disc; padding-left: 1.5rem;">
-              <li>Fundamentals of Software Testing – QATestLab</li>
-              <li>Digital Literacy – Sama (Formerly Samasource Kenya LTD)</li>
-              <li>Basic Computer Packages – Chrisco Professional Centre</li>
-            </ul>
+            <h3>Skills</h3>
+            <!-- Skills content goes here -->
           </div>
-          
+
           <!-- Contact Section -->
           <div id="contact" class="section">
-            <h3>Contact Information</h3>
-            
-            <div class="contact-info">
-              <p><strong>Phone:</strong> 0721 480454</p>
-              <p><strong>Email:</strong> <a href="mailto:maxwellnchoroko@gmail.com">maxwellnchoroko@gmail.com</a></p>
-              <p><strong>Location:</strong> Nairobi, Kenya 10258-01000</p>
-              
-              <h3 style="margin-top: 2rem;">References</h3>
-              <p><strong>James Irungu</strong> – Project Manager</p>
-              <p>Delegate Operations</p>
-              <p>+254 725 353534</p>
-              
-              <p style="margin-top: 1rem;"><strong>Gilfex Opee</strong> – Content Manager</p>
-              <p>Eneza Education Limited</p>
-              <p>+254 707 346313</p>
-            </div>
+            <h3>Contact</h3>
+            <!-- Contact content goes here -->
           </div>
         </div>
       </div>
