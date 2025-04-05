@@ -1,128 +1,14 @@
-/* General Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f8f8;
-  color: #333;
+/* Hide all sections by default */
+.section {
+  display: none;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(34, 34, 34, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-header {
-  background: url('background.jpg') no-repeat center center;
-  background-size: cover;
-  height: 500px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-}
-
-.profile-photo {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  margin-right: 30px;
-}
-
-.header-text h1 {
-  font-size: 2.5em;
-  margin: 0;
-}
-
-.header-text .tagline {
-  font-size: 1.2em;
-  margin-top: 10px;
-}
-
-.header-text .bio {
-  font-size: 1.1em;
-  margin-top: 10px;
-  max-width: 400px;
-}
-
-/* Navigation Links */
-.navigation {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 20px;
-}
-
-.navigation a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2em;
-}
-
-.navigation a:hover {
-  text-decoration: underline;
-}
-
-/* Section Styles */
-section {
-  padding: 50px 0;
-  text-align: center;
-}
-
-h2 {
-  font-size: 2.2em;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.job ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.job ul li {
-  margin-bottom: 10px;
-}
-
-/* Skills Section */
-.skills ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.skills ul li {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-/* Contact Section */
-.contact a {
-  color: #0077b5;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-/* Footer Styles */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
+/* Show the active section */
+.section.active {
+  display: block;
 }
