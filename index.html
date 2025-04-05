@@ -3,93 +3,448 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maxwell Nchoroko - AI Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <title>Maxwell Nchoroko - Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Raleway:wght@400;500&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #0d0d0d;
+      color: #ffffff;
+      line-height: 1.6;
+      background-image: url('/api/placeholder/1200/800');  /* Replace with your actual background image */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+      z-index: -1;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #D4AF37;
+      margin-bottom: 1rem;
+    }
+    
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #D4AF37;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+    
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0;
+    }
+    
+    .profile-card {
+      background-color: rgba(34, 34, 34, 0.8);
+      border-radius: 10px;
+      padding: 3rem;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #D4AF37;
+      object-fit: cover;
+      margin-bottom: 2rem;
+    }
+    
+    .bio {
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+      max-width: 700px;
+      line-height: 1.8;
+    }
+    
+    .navigation {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .nav-button {
+      background-color: #D4AF37;
+      color: #222;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      min-width: 120px;
+      text-align: center;
+    }
+    
+    .nav-button:hover {
+      background-color: #F5D76E;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Content sections */
+    .section {
+      display: none;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: rgba(34, 34, 34, 0.7);
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    
+    .section.active {
+      display: block;
+    }
+    
+    .section h3 {
+      color: #D4AF37;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .job {
+      margin-bottom: 1.5rem;
+      border-left: 2px solid #D4AF37;
+      padding-left: 1rem;
+    }
+    
+    .job-title {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    
+    .job-company {
+      font-style: italic;
+      margin-bottom: 0.3rem;
+    }
+    
+    .job-period {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 0.5rem;
+    }
+    
+    .job-description ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+    
+    .education-item {
+      margin-bottom: 1rem;
+    }
+    
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    
+    .skill-item {
+      background-color: rgba(212, 175, 55, 0.1);
+      padding: 0.7rem 1rem;
+      border-radius: 4px;
+      border-left: 2px solid #D4AF37;
+    }
+    
+    .contact-info p {
+      margin-bottom: 0.7rem;
+    }
+    
+    .contact-info a {
+      color: #D4AF37;
+      text-decoration: none;
+    }
+    
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 1.2rem;
+      }
+      
+      .profile-card {
+        padding: 2rem 1.5rem;
+      }
+      
+      .navigation {
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .nav-button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Fullscreen Header Section -->
-  <header class="header">
-    <div class="header-content">
-      <img src="profile.jpg" alt="Maxwell Nchoroko" class="profile-photo">
-      <div class="header-text">
-        <h1>Maxwell Nchoroko</h1>
-        <p class="tagline">AI Data Specialist | Software Tester | Digital Content Creator</p>
-        <p class="bio">I specialize in AI data annotation, quality control, and machine learning training data development. I'm passionate about improving machine learning models and data quality to facilitate AI innovation.</p>
+  <div class="container">
+    <header>
+      <h1>Maxwell Nchoroko</h1>
+      <h2>AI Data Specialist & Quality Analyst</h2>
+    </header>
+    
+    <main class="main-content">
+      <div class="profile-card">
+        <div class="profile-info">
+          <img src="/api/placeholder/150/150" alt="Maxwell Nchoroko" class="profile-image">  <!-- Replace with your actual profile photo -->
+          
+          <p class="bio">
+            Hello! I'm Maxwell, a dedicated AI Data Specialist and Quality Analyst based in Nairobi, Kenya. Passionate about training quality data for AI systems, I specialize in data analysis, transcription, and quality assurance processes to help businesses leverage digital solutions effectively.
+          </p>
+          
+          <div class="navigation">
+            <button class="nav-button" onclick="showSection('experience')">Experience</button>
+            <button class="nav-button" onclick="showSection('education')">Education</button>
+            <button class="nav-button" onclick="showSection('skills')">Skills</button>
+            <button class="nav-button" onclick="showSection('contact')">Contact</button>
+          </div>
+          
+          <!-- Experience Section -->
+          <div id="experience" class="section">
+            <h3>Work Experience</h3>
+            
+            <div class="job">
+              <div class="job-title">Expert Contributor</div>
+              <div class="job-company">Snorkel AI</div>
+              <div class="job-period">January 2025 - Present</div>
+              <div class="job-description">
+                <ul>
+                  <li>Data Annotation: Assigned meaningful labels to raw data such as text, images, audio, or video, to facilitate machine learning processes.</li>
+                  <li>Development of Labeling Functions: Collaborated with data scientists to create labeling functions and programmatic rules.</li>
+                  <li>Data Quality Assurance: Implemented quality control measures to verify accuracy and consistency of labeled data.</li>
+                  <li>Collaboration and Feedback Integration: Worked closely with cross-functional teams to incorporate feedback and refine guidelines.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="job">
+              <div class="job-title">Transcriber & Reviewer</div>
+              <div class="job-company">CGBiz Corporation Scribie</div>
+              <div class="job-period">March 2023 - Present</div>
+              <div class="job-description">
+                <ul>
+                  <li>Actively listening to audio or video recordings and accurately converting spoken content into written form.</li>
+                  <li>Maintaining the integrity and context of the original material in transcriptions.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="job">
+              <div class="job-title">AAT Responder</div>
+              <div class="job-company">Eneza Education Limited</div>
+              <div class="job-period">August 2019 - Present</div>
+              <div class="job-description">
+                <ul>
+                  <li>Responding to over 2500 questions from both high school and primary school students within a 24-hour time frame.</li>
+                  <li>Uploading learning content to the Eneza CMS platform to hit the company's 12-hour target.</li>
+                  <li>Providing quality responses to achieve a 97% customer satisfaction rate.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="job">
+              <div class="job-title">Freelance Team Manager</div>
+              <div class="job-company">Delegate Operations</div>
+              <div class="job-period">August 2023 - January 2024</div>
+              <div class="job-description">
+                <ul>
+                  <li>Defined project scope, objectives, and deliverables to ensure clear direction and alignment with client expectations.</li>
+                  <li>Developed detailed project plans, including timelines, milestones, and resource requirements.</li>
+                  <li>Assembled project teams with the right skills and expertise, ensuring effective collaboration.</li>
+                  <li>Implemented and monitored quality assurance processes throughout projects.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="job">
+              <div class="job-title">Quality Analyst</div>
+              <div class="job-company">Sama (formerly Samasource Kenya)</div>
+              <div class="job-period">August 2022 - February 2023</div>
+              <div class="job-description">
+                <ul>
+                  <li>Analyzed reviewers' work output against guidelines and provided constructive feedback.</li>
+                  <li>Provided feedback to Team Leaders on identified areas that individual team members needed to improve.</li>
+                  <li>Compiled and distributed comprehensive feedback to agents on identified gaps or areas of weakness.</li>
+                  <li>Compiled and sent daily, weekly, and monthly quality reports to relevant stakeholders.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="job">
+              <div class="job-title">AI Data Associate</div>
+              <div class="job-company">Sama (formerly Samasource Kenya)</div>
+              <div class="job-period">August 2017 - July 2022</div>
+              <div class="job-description">
+                <ul>
+                  <li>Classified products into multiple categories following specific taxonomies.</li>
+                  <li>Maintained data work requirements by following data program techniques and procedures, meeting and maintaining a 95%+ quality threshold.</li>
+                  <li>Verified entered data by reviewing, correcting, deleting, or reentering data.</li>
+                  <li>Achievement: Promoted to project reviewer (Digital Cartography) in a record time of two weeks.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Education Section -->
+          <div id="education" class="section">
+            <h3>Education</h3>
+            
+            <div class="education-item">
+              <div class="job-title">Diploma in Business Information Technology</div>
+              <div class="job-company">St. Paul's University</div>
+              <div class="job-period">2020 - 2021</div>
+            </div>
+            
+            <div class="education-item">
+              <div class="job-title">B.Ed Arts (Mathematics & Geography) - Ongoing</div>
+              <div class="job-company">Kenyatta University</div>
+              <div class="job-period">September 2015</div>
+            </div>
+            
+            <div class="education-item">
+              <div class="job-title">Certificate in Basic Computer</div>
+              <div class="job-company">Chrisco Professional Centre</div>
+              <div class="job-period">May 2015</div>
+            </div>
+            
+            <div class="education-item">
+              <div class="job-title">KCSE Certificate</div>
+              <div class="job-company">Senior Chief Kegati Secondary</div>
+              <div class="job-period">2014</div>
+            </div>
+            
+            <div class="education-item">
+              <div class="job-title">KCPE Certificate</div>
+              <div class="job-company">Chrisco Educational Centre</div>
+              <div class="job-period">2002 - 2009</div>
+            </div>
+          </div>
+          
+          <!-- Skills Section -->
+          <div id="skills" class="section">
+            <h3>Professional Skills</h3>
+            
+            <div class="skills-list">
+              <div class="skill-item">Data Analysis</div>
+              <div class="skill-item">Teaching</div>
+              <div class="skill-item">Transcription</div>
+              <div class="skill-item">Data Annotation</div>
+              <div class="skill-item">Quality Assurance</div>
+              <div class="skill-item">Project Management</div>
+              <div class="skill-item">MS Office Suite</div>
+              <div class="skill-item">Labeling Functions</div>
+              <div class="skill-item">Team Management</div>
+            </div>
+            
+            <h3 style="margin-top: 2rem;">Certifications</h3>
+            <ul style="list-style-type: disc; padding-left: 1.5rem;">
+              <li>Fundamentals of Software Testing – QATestLab</li>
+              <li>Digital Literacy – Sama (Formerly Samasource Kenya LTD)</li>
+              <li>Basic Computer Packages – Chrisco Professional Centre</li>
+            </ul>
+          </div>
+          
+          <!-- Contact Section -->
+          <div id="contact" class="section">
+            <h3>Contact Information</h3>
+            
+            <div class="contact-info">
+              <p><strong>Phone:</strong> 0721 480454</p>
+              <p><strong>Email:</strong> <a href="mailto:maxwellnchoroko@gmail.com">maxwellnchoroko@gmail.com</a></p>
+              <p><strong>Location:</strong> Nairobi, Kenya 10258-01000</p>
+              
+              <h3 style="margin-top: 2rem;">References</h3>
+              <p><strong>James Irungu</strong> – Project Manager</p>
+              <p>Delegate Operations</p>
+              <p>+254 725 353534</p>
+              
+              <p style="margin-top: 1rem;"><strong>Gilfex Opee</strong> – Content Manager</p>
+              <p>Eneza Education Limited</p>
+              <p>+254 707 346313</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </header>
-
-  <!-- About Me Section -->
-  <section class="about" id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I am an AI specialist with expertise in data annotation and machine learning. I work on ensuring the quality of machine learning models through precise training data, which enhances model accuracy.</p>
-    </div>
-  </section>
-
-  <!-- Work Experience Section -->
-  <section class="work-experience" id="experience">
-    <div class="container">
-      <h2>Work Experience</h2>
-      <div class="job">
-        <h3>Expert Contributor - Snorkel AI</h3>
-        <p><strong>January 2025 – Present (Remote, Redwood City, California, USA)</strong></p>
-        <ul>
-          <li>Data annotation and labeling for machine learning datasets (text, images, audio, video).</li>
-          <li>Collaborated with data scientists to develop efficient labeling functions.</li>
-          <li>Implemented quality control measures to ensure high accuracy and consistency in data labeling.</li>
-          <li>Worked with cross-functional teams to align labeling with machine learning objectives.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section class="education" id="education">
-    <div class="container">
-      <h2>Education</h2>
-      <div class="education-item">
-        <h3>Diploma in Business Information Technology</h3>
-        <p>St. Paul’s University, 2020 – 2021</p>
-      </div>
-      <div class="education-item">
-        <h3>B.Ed Arts (Mathematics & Geography) – Ongoing</h3>
-        <p>Kenyatta University, September 2015</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="skills" id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <ul>
-        <li>AI Data Annotation</li>
-        <li>Machine Learning</li>
-        <li>Data Quality Assurance</li>
-        <li>Data Analysis</li>
-        <li>Transcription</li>
-        <li>Project Management</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:maxwellnchoroko@gmail.com">maxwellnchoroko@gmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/maxwell-nchoroko-217364158/" target="_blank">Maxwell Nchoroko</a></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Maxwell Nchoroko | AI Data Specialist</p>
-    </div>
-  </footer>
-
+    </main>
+  </div>
+  
+  <script>
+    // Show experience section by default
+    document.getElementById('experience').classList.add('active');
+    
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // Show selected section
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
