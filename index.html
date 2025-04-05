@@ -132,35 +132,36 @@
       text-align: center;
     }
 
-    /* Add rotation animation on button click */
-    .nav-button:active {
-      transform: rotate(360deg);
-      transition: transform 0.8s ease;
-    }
-
-    .nav-button:hover {
-      background-color: #F5D76E;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Blink effect on sections */
+    /* Hover/Active blink and reveal effect on sections */
     @keyframes blink {
       0% { opacity: 1; }
       50% { opacity: 0.7; }
       100% { opacity: 1; }
     }
 
-    /* Add blink effect to sections */
-    .blink-section {
-      animation: blink 1.5s infinite;
-      padding: 1rem 2rem;
+    .section {
+      display: none;
       margin-top: 2rem;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
+      padding: 1.5rem;
+      background-color: rgba(34, 34, 34, 0.7);
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      animation: blink 1.5s infinite;  /* Blink animation */
+      transition: all 0.3s ease;
+    }
+    
+    .section.active {
+      display: block;
+    }
+    
+    .section h3 {
+      color: #D4AF37;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
     }
 
+    /* Hover effects for buttons to reveal sections */
     .blink-section:hover {
       background-color: #F5D76E;
       transform: translateY(-3px);
@@ -178,7 +179,7 @@
       margin-top: 2rem;
       display: inline-block;
       text-align: center;
-      animation: blink 1.5s infinite;  /* Apply blink animation */
+      animation: blink 1.5s infinite;
     }
 
     .download-cv:hover {
@@ -232,7 +233,7 @@
           </div>
           
           <!-- Work Experience Section -->
-          <div id="experience" class="section blink-section">
+          <div id="experience" class="section">
             <h3>Work Experience</h3>
             <div class="job">
               <h4>Expert Contributor - Snorkel AI</h4>
@@ -246,7 +247,7 @@
           </div>
           
           <!-- Education Section -->
-          <div id="education" class="section blink-section">
+          <div id="education" class="section">
             <h3>Education</h3>
             <div class="education-item">
               <p><strong>Diploma in Business Information Technology</strong> - St. Paul's University (2020 – 2021)</p>
@@ -257,7 +258,7 @@
           </div>
 
           <!-- Skills Section -->
-          <div id="skills" class="section blink-section">
+          <div id="skills" class="section">
             <h3>Skills</h3>
             <ul>
               <li>Data Analysis</li>
@@ -268,7 +269,7 @@
           </div>
 
           <!-- Contact Section -->
-          <div id="contact" class="section blink-section">
+          <div id="contact" class="section">
             <h3>Contact Information</h3>
             <p><strong>Email:</strong> <a href="mailto:maxwellnchoroko@gmail.com">maxwellnchoroko@gmail.com</a></p>
             <p><strong>Phone:</strong> 0721 480454</p>
